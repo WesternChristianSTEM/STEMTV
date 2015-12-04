@@ -3,6 +3,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="jquery.countdown.js"></script>
+<script type="text/javascript" src="date.js"></script>
 <title>STEM Advertisement</title>
 <style>
 body {
@@ -10,8 +11,9 @@ body {
 	margin:0px;
 	}
 div {
-	position:absolute;
-	color:white;
+	position: absolute;
+	color: white;
+	height: 58px;
 }
 #a1 {
 	font-weight:bold;
@@ -51,7 +53,13 @@ div {
 }
 
 #countdown {
-	
+	font-weight: bold;
+	font-size: 24px;
+	top: 414px;
+	left: 378px;
+	width: 325px;
+	text-align: center;
+	font-family: arial;
 }
 
 img {
@@ -124,8 +132,9 @@ img {
     
     <div id="countdown">
     <script type="text/javascript">
-		$('#countdown').countdown('2015/12/10', function(event) {
-			$(this).html(event.strftime('%d days %H:%M:%S'));
+	var d = Date.today().next().thursday();
+		$('#countdown').countdown(d, function(event) {
+			$(this).html(event.strftime('Next Meeting: %d Days Away'));
 		});
 	</script>
     </div>
