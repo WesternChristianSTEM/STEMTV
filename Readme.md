@@ -8,6 +8,7 @@ You can install the STEM Club TV Display by uploading the php file to your web s
 Ensure you reference the following script in your `<head>`
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://www.parsecdn.com/js/parse-latest.js"></script>
 ```
 
 #Credits
