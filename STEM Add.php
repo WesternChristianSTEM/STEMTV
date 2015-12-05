@@ -26,7 +26,7 @@ div {
 }
 #s2 {
 	font-weight:bold;
-	font-size:14px;
+	font-size:18px;
 	top:242px;
 	left:100px;
 	width:220px;
@@ -44,7 +44,7 @@ div {
 }
 #s1 {
 	font-weight:bold;
-	font-size:14px;
+	font-size:18px;
 	top:242px;
 	left:765px;
 	width:220px;
@@ -134,7 +134,11 @@ img {
     <script type="text/javascript">
 	var d = Date.today().next().thursday();
 		$('#countdown').countdown(d, function(event) {
-			$(this).html(event.strftime('Next Meeting: %d Days Away'));
+			if (Date.today().is().thursday()) {
+				$(this).html('Meeting Today @ Lunch');
+			} else {
+				$(this).html(event.strftime('Next Meeting: %d Days Away'));
+			}
 		});
 	</script>
     </div>
