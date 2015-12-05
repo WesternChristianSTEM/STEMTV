@@ -11,12 +11,9 @@ Ensure you reference the following script in your `<head>`
 <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
 ```
 
-<<<<<<< HEAD
 #View Live
 [Click Here to See it In Action](http://roeboatcorpcom.ipage.com/stem/STEM%20Add.html)
 
-=======
->>>>>>> 5b1fdd3a1cda66e87b37a4d826f02d14f7ad24f8
 #Credits
 - [Tyler Pavia](http://github.com/TylerPa), HTML & CSS
 - [Timothy "TJ" Roe, Jr.](http://github.com/timroejr), PHP & JavaScript
