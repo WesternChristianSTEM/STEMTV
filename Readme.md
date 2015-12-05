@@ -18,6 +18,6 @@ Ensure you reference the following script in your `<head>`
 The Image and background of the STEM Club TV Project was developed and created by Tyler Pavia. Copyright (c) 2015 Tyler Pavia. All Rights Reserved.
 
 #Contact
-For issues or questions in regards to the program please [Contact Us](Timothy.Roe@mywcs.com)
+For issues or questions in regards to the program please [Contact Us](mailto:Timothy.Roe@mywcs.com)
 
 

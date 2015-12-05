@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="jquery.countdown.js"></script>
 <script type="text/javascript" src="date.js"></script>
+<script src="http://www.parsecdn.com/js/parse-latest.js"></script>
 <title>STEM Advertisement</title>
 <style>
 body {
@@ -62,6 +63,7 @@ div {
 	font-family: arial;
 }
 
+
 img {
 	width:1080px;
 }
@@ -90,45 +92,138 @@ img {
 	</header>
     
 	<div id="a1"><?php 
-	$object = new ParseQuery("labs");
+	/*$object = new ParseQuery("labs");
 	$object->ascending("date");
 	$object->limit(1);
 	$results = $object->find();
 	for ($i = 0; $i < count($results); $i++) {
 		$dataObject = $results[$i];
 		echo $dataObject->get('lab');	
-	}
-	?></div>
+	}*/
+	?>
+    <script type="text/javascript">
+	Parse.initialize("7IhYiYTzxQLcjWq28fTt4ehGZ1mMVuzR0DvvxbQx", "N3oURMrurRIufAscTYk3ESkRt0IwM2k8xszLNIsc");
+	var data = Parse.Object.extend("labs");
+	var query = new Parse.Query(data);
+	query.ascending("date");
+	//query.limit(1); //DEBUG
+	query.find({
+		success: function(results) {
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i];
+				//alert(object.get('date'));
+				var futureDate = new Date(object.get('date'));
+				if (Date.today().isBefore(futureDate)) {
+					$('#a1').html(object.get('lab'));
+					break;
+				} else {
+				}
+				
+			}
+		}
+	});
+	</script>
+    </div>
     <div id="s2"><?php
-		$object = new ParseQuery("labs");
+	/*	$object = new ParseQuery("labs");
 	$object->ascending("date");
 	$object->limit(1);
 	$results = $object->find();
 	for ($i = 0; $i < count($results); $i++) {
 		$dataObject = $results[$i];
 		echo $dataObject->get('message');	
-	}
-	?> </div>
+	} */
+	?> 
+    <script type="text/javascript">
+	Parse.initialize("7IhYiYTzxQLcjWq28fTt4ehGZ1mMVuzR0DvvxbQx", "N3oURMrurRIufAscTYk3ESkRt0IwM2k8xszLNIsc");
+	var data = Parse.Object.extend("labs");
+	var query = new Parse.Query(data);
+	query.ascending("date");
+	//query.limit(1); //DEBUG
+	query.find({
+		success: function(results) {
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i];
+				//alert(object.get('date')); DEBUG
+				var futureDate = new Date(object.get('date'));
+				if (Date.today().isBefore(futureDate)) {
+					$('#s2').html(object.get('message'));
+					break;
+				} else {
+				}
+				
+			}
+		}
+	});
+	</script>
+    </div>
 	<div id="a2"><?php 
-	$object = new ParseQuery("events");
+	/*$object = new ParseQuery("events");
 	$object->ascending("date");
 	$object->limit(1);
 	$results = $object->find();
 	for ($i = 0; $i < count($results); $i++) {
 		$dataObject = $results[$i];
 		echo $dataObject->get('name');	
-	}
-	?></div>
+	} */
+	
+	?>
+    <script type="text/javascript">
+	Parse.initialize("7IhYiYTzxQLcjWq28fTt4ehGZ1mMVuzR0DvvxbQx", "N3oURMrurRIufAscTYk3ESkRt0IwM2k8xszLNIsc");
+	var data = Parse.Object.extend("events");
+	var query = new Parse.Query(data);
+	query.ascending("date");
+	//query.limit(1); //DEBUG
+	query.find({
+		success: function(results) {
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i];
+				//alert(object.get('date')); DEBUG
+				var futureDate = new Date(object.get('date'));
+				if (Date.today().isBefore(futureDate)) {
+					$('#a2').html(object.get('name'));
+					break;
+				} else {
+				}
+				
+			}
+		}
+	});
+	</script>
+    </div>
     <div id="s1"><?php 
-	$object = new ParseQuery("events");
+	/*$object = new ParseQuery("events");
 	$object->ascending("date");
 	$object->limit(1);
 	$results = $object->find();
 	for ($i = 0; $i < count($results); $i++) {
 		$dataObject = $results[$i];
 		echo $dataObject->get('message');	
-	}
-	?></div>
+	} */
+	?>
+    <script type="text/javascript">
+	Parse.initialize("7IhYiYTzxQLcjWq28fTt4ehGZ1mMVuzR0DvvxbQx", "N3oURMrurRIufAscTYk3ESkRt0IwM2k8xszLNIsc");
+	var data = Parse.Object.extend("events");
+	var query = new Parse.Query(data);
+	query.ascending("date");
+	//query.limit(1); //DEBUG
+	query.find({
+		success: function(results) {
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i];
+				//alert(object.get('date')); DEBUG
+				var futureDate = new Date(object.get('date'));
+				if (Date.today().isBefore(futureDate)) {
+					$('#s1').html(object.get('message'));
+					break;
+				} else {
+				}
+				
+			}
+		}
+	});
+	</script>
+    </div>
     
     <div id="countdown">
     <script type="text/javascript">
